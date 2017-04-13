@@ -34,9 +34,12 @@ te_data = pre.transform(dataset.test)
 #Compare supervised models
 md.CompareSupervisedModels(tr_data, dataset.train_target)
 
+"""
+If Grid search on MLP takes too long time, comment out it 
+and use following default MLP model for supervised learning.
+"""
 #Grid Search on MLP model
 bestmodel=md.MLPGridSearch(tr_data, dataset.train_target)
-
 # Test the model
 #bestmodel=MLPClassifier()
 bestmodel.fit(tr_data, dataset.train_target)
